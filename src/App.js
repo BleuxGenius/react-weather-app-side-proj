@@ -20,6 +20,7 @@ class App extends React.Component {
     error: undefined
   }
 
+  // console.log(data)
   // create method to get the weather 
 
   getWeather = async (e) => {
