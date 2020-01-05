@@ -37,7 +37,7 @@ class App extends React.Component {
       // checking to make sure if city and country has a value then do nothing 
       if (city  && country ){ 
       
-      console.log(data);
+      
 
       this.setState({
         temperature: data.main.temp,
@@ -85,4 +85,3 @@ render(){
 
 export default App;
 
-// stopping point with app 
