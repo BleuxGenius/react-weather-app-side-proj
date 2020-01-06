@@ -4,8 +4,8 @@ import Form from "./components/Form";
 import Weather from './components/Weather';
 
 
-// API Key
 
+// API Key
 const API_KEY = "c82a11bceccd51b03a9ec65d1ab6aee3";  
 
 // initilize component 
@@ -44,7 +44,7 @@ class App extends React.Component {
         temperature: data.main.temp,
         city: data.name,
         country: data.sys.country,
-        humidity: data.name.humidity,
+        humidity: data.main.humidity,
         description: data.weather[0].description,
         error: ''
       });
@@ -63,26 +63,38 @@ class App extends React.Component {
   // returns JSX 
 render(){
   return (
-<div>
-  <Titles />
-  {/* set prop to the get weather method */}
-  <Form getWeather={this.getWeather}/>
-  <Weather 
-    temperature={this.state.temperature} 
-    city={this.state.city}
-    country={this.state.country}
-    humidity={this.state.humidity}
-    description={this.state.description}
-    error={this.state.error}
 
-  
-  />
+    // 
+<div>
+  <div className="wrapper">
+    <div className="main">
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-5 title-container">
+            <Titles />
+        </div>
+
+        <div className="col-xs-3 form-container">
+        <Form getWeather={this.getWeather}/>
+          <Weather 
+              temperature={this.state.temperature} 
+              city={this.state.city}
+              country={this.state.country}
+              humidity={this.state.humidity}
+              description={this.state.description}
+              error={this.state.error}
+            />
+        </div>
+      </div>z
+    </div>
+  </div>
+</div>
 </div>
 
   );
 }
 
 };
+  
 
 export default App;
-
