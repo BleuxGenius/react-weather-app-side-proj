@@ -85,7 +85,7 @@ render(){
               error={this.state.error}
             />
         </div>
-      </div>z
+      </div>
     </div>
   </div>
 </div>
